@@ -2,4 +2,4 @@
   Source.cpp
   Создание кода...
 LINK : warning LNK4098: библиотека по умолчанию "MSVCRT" конфликтует с использованием других библиотек; используйте /NODEFAULTLIB:library
-  NO_SHRECK_NOVEMBER.vcxproj -> C:\Users\Huawei\source\repos\NO_SHRECK_NOVEMBER\x64\Debug\NO_SHRECK_NOVEMBER.exe
+  NO_SHRECK_NOVEMBER.vcxproj -> C:\Users\zavor\source\repos\NO_SHRECK_NOVEMBER\x64\Debug\NO_SHRECK_NOVEMBER.exe

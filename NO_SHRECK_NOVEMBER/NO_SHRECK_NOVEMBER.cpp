@@ -3,8 +3,8 @@
 #include "Header.h"
 using namespace std;
 int main() {
-    shreck gay;
-    cout << gay.mnogoclhen() << endl;
+    shreck lesbian;
+    cout << lesbian.mnogoclhen() << endl;
     // Инициализация GLFW
     if (!glfwInit()) {
         std::cerr << "Failed to initialize GLFW" << std::endl;
