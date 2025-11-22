@@ -1,14 +1,7 @@
-# Directories
-**bin/
-**bin-int/
-
-# Files
-*.user
-*imgui.ini
-
-# Visual Studio
+*.exe
+*.out
+*.o
+.DS_Store
+.vscode/
+.vsidx
 .vs/
-*.sln
-*.vcxproj
-*.vcxproj.filters
-*.vcxproj.user
