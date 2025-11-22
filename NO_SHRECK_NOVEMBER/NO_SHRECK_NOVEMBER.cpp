@@ -32,7 +32,7 @@ int main() {
     // Основной цикл
     while (!glfwWindowShouldClose(window)) {
         // Очистка экрана
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClearColor(255.0f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         // Обмен буферов
