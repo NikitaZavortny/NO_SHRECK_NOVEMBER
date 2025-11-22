@@ -1,20 +1,50 @@
-﻿// NO_SHRECK_NOVEMBER.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
+#include "Includes/glfw3.h"
 
-#include <iostream>
+int main() {
+    // Инициализация GLFW
+    if (!glfwInit()) {
+        std::cerr << "Failed to initialize GLFW" << std::endl;
+        return -1;
+    }
 
-int main()
-{
-    std::cout << "Hello World!\n";
+    // Настройка GLFW
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+    // Создание окна
+    GLFWwindow* window = glfwCreateWindow(800, 600, "GLFW Window", NULL, NULL);
+    if (!window) {
+        std::cerr << "Failed to create GLFW window" << std::endl;
+        glfwTerminate();
+        return -1;
+    }
+
+    // Сделать окно текущим контекстом
+    glfwMakeContextCurrent(window);
+
+    // Обработчик изменения размера окна
+    glfwSetFramebufferSizeCallback(window, [](GLFWwindow* window, int width, int height) {
+        glViewport(0, 0, width, height);
+        });
+
+    // Основной цикл
+    while (!glfwWindowShouldClose(window)) {
+        // Очистка экрана
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        // Обмен буферов
+        glfwSwapBuffers(window);
+
+        // Обработка событий
+        glfwPollEvents();
+    }
+
+    // Очистка
+    glfwDestroyWindow(window);
+    glfwTerminate();
+
+    return 0;
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
